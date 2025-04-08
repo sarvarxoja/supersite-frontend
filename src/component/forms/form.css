@@ -1,0 +1,14 @@
+.form_container {
+  background: rgba(161, 30, 41, 1);
+}
+
+.contact_form {
+  border: 1px solid #f4b7bc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.contact_form_comment {
+  height: 160px;
+  resize: none;
+}

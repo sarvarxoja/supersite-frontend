@@ -1,0 +1,28 @@
+.images_container {
+  display: flex;
+}
+
+.partner-card {
+  background-color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 16px;
+  margin: 8px;
+  border-radius: 8px;
+  width: 290px; /* Kartaning kengligini cheklash */
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+}
+
+.filter-badge {
+  background-color: #0096ff;
+  color: white;
+  font-size: 12px;
+}

@@ -1,0 +1,27 @@
+.my_carousel {
+  width: 100%;
+  height: 581px;
+}
+
+.swipper_pages {
+  margin: auto;
+}
+
+.swiper-pagination-bullet {
+  border-radius: 0px !important; /* Kvadrat shakl hosil qilish uchun */
+  transition: background-color 0.3s ease-in-out !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: rgb(169, 35, 35) !important; /* Aktiv bo‘lganda rangni o‘zgartirish */
+}
+
+.main_enter_button  {
+  border: none !important;
+  transition: 0.5s;
+}
+
+.main_enter_button:hover {
+  background-color: #d62b31;
+  color: white;
+}

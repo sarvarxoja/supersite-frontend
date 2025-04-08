@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montaga&family=Unbounded:wght@200..900&display=swap");
+
+.number_font {
+  font-size: 90px;
+  transition: 0.5s;
+  font-family: "Montaga", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(250, 234, 235);
+}
+
+.card_a {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.top_icon_css {
+  transition: 0.5s;
+  
+}
+
+.card_a:hover {
+  .number_font {
+    color: #991b1b;
+  }
+
+  .top_icon_css {
+    color: #991b1b;
+  }
+}

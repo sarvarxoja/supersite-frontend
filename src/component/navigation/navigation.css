@@ -1,0 +1,7 @@
+.navbar_link {
+    transition: 0.5s;
+}
+
+.navbar_link:hover {
+    border: 1px solid rgb(251, 170, 183);
+}

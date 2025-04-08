@@ -1,0 +1,8 @@
+.about_more_button {
+    transition: 0.5s;
+}
+
+.about_more_button:hover {
+    color: #a72b36;
+    background: #fff1f2 !important;
+}
