@@ -1,35 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 
 export const Footer = () => {
+  const { lang } = useParams();
+  const { i18n, t } = useTranslation();
+
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang]);
+
   return (
-    <footer className="w-full bg-[#a11e29] text-white py-[60px]">
+    <footer className="w-full bg-[#a11e29] text-white pt-[60px] pb-[30px]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Logo section */}
           <div className="flex items-start">
             <div className="w-16 h-16 relative">
-                <img src="/ec09d7c8-3ba8-4ab4-955a-dddf3f7bd1e3_removalai_preview.png" alt="our logo" />
+              <img
+                src="/ec09d7c8-3ba8-4ab4-955a-dddf3f7bd1e3_removalai_preview.png"
+                loading="lazy"
+                alt="our logo"
+              />
             </div>
           </div>
 
           {/* First column */}
           <div>
-            <h3 className="font-medium mb-4">Каталог</h3>
+            <h3 className="font-medium mb-4">{t("catalog")}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm hover:underline">
-                  Курсы
+                <a href="#about" className="text-sm hover:underline">
+                  {t("about_us")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
-                  Вебинары
+                <a href="#news" className="text-sm hover:underline">
+                  {t("news")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
-                  Открытый урок
+                <a href="#introduction" className="text-sm hover:underline">
+                  {t("introduction")}
                 </a>
               </li>
             </ul>
@@ -37,21 +52,21 @@ export const Footer = () => {
 
           {/* Second column */}
           <div>
-            <h3 className="font-medium mb-4">О нас</h3>
+            <h3 className="font-medium mb-4">{t("courses")}</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-sm hover:underline">
-                  О компании
+                  {t("cyberSecurity")}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:underline">
-                  Миссия
+                  ISO/IEC 27001
                 </a>
               </li>
               <li>
                 <a href="#" className="text-sm hover:underline">
-                  Возможности
+                  ISO/IEC 27002
                 </a>
               </li>
             </ul>
@@ -89,8 +104,8 @@ export const Footer = () => {
               </a>
             </div>
             <div className="flex space-x-3">
-              <div className="mt-12 pt-4 text-xs flex justify-end">
-                <p>© 2024 - Все права защищены</p>
+              <div className="mt-20 pt-4 text-xs flex justify-end">
+                <p>© 2025 - {t("reserved")}</p>
               </div>
             </div>
           </div>

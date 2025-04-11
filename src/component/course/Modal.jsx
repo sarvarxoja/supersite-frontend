@@ -70,7 +70,7 @@ export const TimeSelectionModal = ({
           {/* Modal Content */}
           <div
             ref={modalRef}
-            className="bg-red-700 text-white p-6 rounded-lg w-full max-w-md relative md:p-8 animate-fadeIn"
+            className="bg-[#A11E29] text-white p-6 rounded-lg w-full max-w-md relative md:p-8 animate-fadeIn"
           >
             {/* Close button */}
             <button

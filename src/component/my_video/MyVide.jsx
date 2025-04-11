@@ -1,14 +1,25 @@
-import React from "react";
 import { Play } from "lucide-react";
 import { VideoPlayer } from "./Video";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const VideoDeliverySection = () => {
+  const { lang } = useParams();
+  const { i18n, t } = useTranslation();
+
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang]);
+
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full" id="introduction">
       {/* Video Section */}
       <div className="w-full bg-white p-4 text-center ">
-        <h1 className="text-red-800 mb-4 font-semibold text-xl">
-          Видео инструкция как пользоваться сайтом
+        <h1 className="text-black-800 mb-4 font-semibold text-[30px]">
+          {t("video_title")}
         </h1>
 
         <div className="w-full max-w-4xl mx-auto mb-4">
@@ -28,10 +39,7 @@ export const VideoDeliverySection = () => {
         </div>
         <VideoPlayer />
         <p className="text-left text-sm text-gray-600 mb-4 max-w-3xl mx-auto">
-          Видео инструкция как пользоваться сайтом Видео инструкция как
-          пользоваться сайтом Видео инструкция как пользоваться сайтом Видео
-          инструкция как пользоваться сайтом Видео инструкция как пользоваться
-          сайтом
+          {t("video_des")}
         </p>
       </div>
     </div>

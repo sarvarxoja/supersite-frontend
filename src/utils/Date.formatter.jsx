@@ -20,7 +20,7 @@ export const FormatDate = ({dateString}) => {
   const month = monthNames[date.getMonth()];
   return (
     <span className="text-center">
-      {day}- <br /> {month}
+      {day} - {month}
     </span>
   );
 };

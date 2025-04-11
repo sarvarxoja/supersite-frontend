@@ -1,68 +1,58 @@
-import React, { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
 
 export const OurMissionSection = () => {
   const [block, setBlock] = useState(false);
-  
+
+  const { lang } = useParams();
+  const { i18n, t } = useTranslation();
+
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang]);
+
   return (
     <div className="bg-red-800 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Left column - Image */}
           <div className="w-full md:w-1/2">
             <img
               src="/Rectangle 9.png"
               alt="Person holding a book"
+              loading="lazy"
               className="w-full h-auto rounded-lg shadow-lg"
             />
           </div>
 
           {/* Right column - Mission content */}
           <div className="w-full md:w-1/2 space-y-6">
-            <h2 className="text-3xl font-bold">Наша миссия</h2>
+            <h2 className="text-3xl font-bold">{t("our_mission")}</h2>
 
-            <p className="text-gray-100">
-              Мы стремимся улучшить понимание каждого, предоставляя качественное
-              обучение в области кибербезопасности ИТ и помогая строить карьеру
-              в современном цифровом пространстве.
-            </p>
-
-            <p className="text-gray-100">
-              Наша миссия — предоставить профессиональные знания и навыки для
-              каждого из широкого спектра в обеспечении потребностей бизнеса. С
-              помощью наших современных программ обучения мы стремимся создать
-              среду, в которой передовая техническая подготовка способствует
-              повышает инновации и эффективности управления риском.
-            </p>
-            <p
-              className="mt-3 text-gray-100"
-              style={{ display: block ? "block" : "none" }}
-            >
-              Наша миссия — предоставить профессиональные знания и навыки для
-              каждого из широкого спектра в обеспечении потребностей бизнеса. С
-              помощью наших современных программ обучения мы стремимся создать
-              среду, в которой передовая техническая подготовка способствует
-              повышает инновации и эффективности управления риском
-            </p>
+            <p className="text-gray-100">{t("mission_more")}</p>
             <div className="mt-6">
               <button
-                style={{ display: block ? "none" : "block" }}
-                className="bg-white text-[#6c6b6b] font-bold font-sans hover:bg-[#e8656e] hover:text-red-800 py-2 px-8 rounded-full flex items-center transition duration-500"
                 onClick={() => setBlock(!block)}
+                className="about_more_button w-full flex items-center justify-center max-w-xs py-[10px] px-6 bg-white text-gray-600 font-medium text-lg rounded-full shadow-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
               >
-                Подробнее               
+                {t("more_details")}{" "}
+                {block ? (
+                  <ChevronUp size={22} className="mt-1 ml-2" />
+                ) : (
+                  <ChevronDown size={22} className="mt-1 ml-2" />
+                )}
               </button>
             </div>
           </div>
         </div>
         <p
-          className=" text-gray-100"
+          className=" text-gray-100 mt-4"
           style={{ display: block ? "block" : "none" }}
         >
-          Наша миссия — предоставить профессиональные знания и навыки для
-          каждого из широкого спектра в обеспечении потребностей бизнеса. С
-          помощью наших современных программ обучения мы стремимся создать
-          среду, в которой передовая техническая подготовка способствует
-          повышает инновации и эффективности управления риском
+          {t("mission_end")}
         </p>
       </div>
     </div>

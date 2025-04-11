@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const TruncateText = ({ text, maxLength }) => {
-  // holatni saqlash
+  const { lang } = useParams();
+  const { i18n, t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang]);
 
   // textni qisqartirish
   const truncatedText =
@@ -18,7 +27,11 @@ export const TruncateText = ({ text, maxLength }) => {
           className="text-blue-500 text-xs hover:underline"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          {isExpanded ? "Секрет" : "Подробнее"}
+          {isExpanded ? (
+            <span>{t("secret")}</span>
+          ) : (
+            <span>{t("more_details")}</span>
+          )}
         </button>
       </div>
     </div>
@@ -26,9 +39,15 @@ export const TruncateText = ({ text, maxLength }) => {
 };
 
 export const TruncateTextNews = ({ text, maxLength }) => {
-  // holatni saqlash
+  const { lang } = useParams();
+  const { i18n, t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(false);
 
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang]);
   // textni qisqartirish
   const truncatedText =
     text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
@@ -43,7 +62,11 @@ export const TruncateTextNews = ({ text, maxLength }) => {
           className="text-blue-600 text-sm hover:underline"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          {isExpanded ? "Секрет" : "Подробнее"}
+          {isExpanded ? (
+            <span>{t("secret")}</span>
+          ) : (
+            <span>{t("more_details")}</span>
+          )}
         </button>
       </div>
     </div>

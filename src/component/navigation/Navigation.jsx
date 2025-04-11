@@ -1,19 +1,38 @@
 import "./navigation.css";
-import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import React, { useEffect, useState } from "react";
 import { Menu, ChevronDown, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 export const Navbar = () => {
-  const [language, setLanguage] = useState("Ru");
+  const { lang } = useParams();
+  const navigate = useNavigate();
+  const { i18n, t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, [lang]);
+
+  const changeLanguage = (newLang) => {
+    const currentPath = location.pathname;
+    const pathWithoutLang = currentPath.replace(/^\/(uz|en|ru)/, "");
+    const newPath = `/${newLang}${pathWithoutLang}`;
+
+    i18n.changeLanguage(newLang);
+    navigate(newPath);
+  };
 
   return (
     <nav className="bg-white w-full shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo - red circle with "ISO" text */}
+          {/* Logo */}
           <div className="flex items-center">
-            <Link to={"/"}>
+            <Link to={`/${lang || "ru"}`}>
               <img
                 src="/logo png 2.png"
                 alt="our logo"
@@ -24,59 +43,60 @@ export const Navbar = () => {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-6">
-            {/* "Курсы" button with pink background */}
-            <button className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link">
-              Курсы
-            </button>
-
-            {/* "О нас" link */}
-            <a
-              href="#"
+          <a
+              href="#courses"
               className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
             >
-              О нас
+              {t("courses")}
             </a>
             <a
-              href="#"
+              href="#about"
               className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
             >
-              Новости
+              {t("about_us")}
             </a>
             <a
-              href="#"
+              href="#news"
               className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
             >
-              Демо урок
+              {t("news")}
+            </a>
+            <a
+              href="#introduction"
+              className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
+            >
+              {t("introduction")} 
             </a>
 
             {/* Language dropdown */}
-            <div className="text-black text-sm relative group">
-              <button className="flex items-center gap-1 group-hover:text-gray-600 transition-colors">
-                {language}
+            <div className="text-black text-sm relative">
+              <button
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="flex items-center gap-1 hover:text-gray-600 transition-colors"
+              >
+                {lang?.toUpperCase() || "RU"}
                 <ChevronDown size={16} />
               </button>
-              <div className="absolute right-0 mt-2 w-20 bg-white shadow-lg rounded-md hidden group-hover:block z-10">
-                <div className="py-1">
-                  <button
-                    onClick={() => setLanguage("Ru")}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                  >
-                    Ru
-                  </button>
-                  <button
-                    onClick={() => setLanguage("En")}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                  >
-                    En
-                  </button>
-                  <button
-                    onClick={() => setLanguage("Uz")}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
-                  >
-                    Uz
-                  </button>
+              {isLangOpen && (
+                <div className="absolute right-0 mt-2 w-20 bg-white shadow-lg rounded-md z-10">
+                  <div className="py-1">
+                    {["ru", "en", "uz"].map((lng) => (
+                      <button
+                        key={lng}
+                        onClick={() => {
+                          changeLanguage(lng);
+                          setIsLangOpen(false);
+                        }}
+                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${
+                          lang === lng ? "bg-gray-100 font-semibold" : ""
+                        }`}
+                      >
+                        {lng.toUpperCase()}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
 
@@ -96,9 +116,11 @@ export const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <button className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-black bg-pink-100 hover:bg-pink-200 transition-colors">
-              Курсы
-            </button>
+            <Link to={`/${lang || "ru"}`}>
+              <button className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-black bg-pink-100 hover:bg-pink-200 transition-colors">
+                Курсы
+              </button>
+            </Link>
             <a
               href="#"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
@@ -115,30 +137,20 @@ export const Navbar = () => {
               <div className="flex justify-between items-center">
                 <span>Язык</span>
                 <div className="flex gap-2">
-                  <button
-                    onClick={() => setLanguage("Ru")}
-                    className={`px-2 py-1 rounded ${
-                      language === "Ru" ? "bg-gray-200" : "hover:bg-gray-100"
-                    }`}
-                  >
-                    Ru
-                  </button>
-                  <button
-                    onClick={() => setLanguage("En")}
-                    className={`px-2 py-1 rounded ${
-                      language === "En" ? "bg-gray-200" : "hover:bg-gray-100"
-                    }`}
-                  >
-                    En
-                  </button>
-                  <button
-                    onClick={() => setLanguage("Uz")}
-                    className={`px-2 py-1 rounded ${
-                      language === "Uz" ? "bg-gray-200" : "hover:bg-gray-100"
-                    }`}
-                  >
-                    Uz
-                  </button>
+                  {["ru", "en", "uz"].map((lng) => (
+                    <button
+                      key={lng}
+                      onClick={() => {
+                        changeLanguage(lng);
+                        setIsMenuOpen(false);
+                      }}
+                      className={`px-2 py-1 rounded ${
+                        lang === lng ? "bg-gray-200" : "hover:bg-gray-100"
+                      }`}
+                    >
+                      {lng.toUpperCase()}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>

@@ -8,6 +8,7 @@ import "./banner.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useTranslation } from "react-i18next";
 
 // import PhotoA from "../../../public/Rectangle 39925.png";
 // import PhotoB from "../../../public/Rectangle 39926.png";
@@ -34,6 +35,8 @@ const carouselImages = [
 
 export const HeaderBanner = () => {
   const swiperRef = useRef(null);
+
+  const { t } = useTranslation();
 
   return (
     <div className="relative mx-auto overflow-hidden">
@@ -83,11 +86,12 @@ export const HeaderBanner = () => {
               <img
                 src={image.url}
                 alt={image.alt}
+                loading="lazy"
                 className="object-cover w-full h-full"
               />
               <div className="absolute bottom-6 left-6 z-20">
                 <button className="bg-pink-50 text-gray-800 py-[8px] px-6 rounded-full w-[200px] font-medium text-center shadow-sm border border-pink-100 main_enter_button">
-                  Записаться на курс
+                  {t("enroll_in_a_course")}
                 </button>
               </div>
             </div>
