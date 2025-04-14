@@ -43,30 +43,30 @@ export const Navbar = () => {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-6">
-          <a
-              href="#courses"
+          <Link
+              to={`/${lang}/#courses`}
               className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
             >
               {t("courses")}
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              to={`/${lang}/#about`}
               className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
             >
               {t("about_us")}
-            </a>
-            <a
-              href="#news"
+            </Link>
+            <Link
+              to={`/${lang}/#news`}
               className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
             >
               {t("news")}
-            </a>
-            <a
-              href="#introduction"
+            </Link>
+            <Link
+              to={`/${lang}/#introduction`}
               className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
             >
               {t("introduction")} 
-            </a>
+            </Link>
 
             {/* Language dropdown */}
             <div className="text-black text-sm relative">

@@ -209,7 +209,7 @@ export const ContactForm = () => {
                   <div className="flex items-center flex-1">
                     <span className="mr-2 text-white">{t("from")}</span>
                     <input
-                      type="text"
+                      type="time"
                       name="fromDate"
                       value={formData.fromDate}
                       onChange={handleChange}
@@ -222,7 +222,7 @@ export const ContactForm = () => {
                   <div className="flex items-center flex-1">
                     <span className="mr-2 text-white">{t("to")}</span>
                     <input
-                      type="text"
+                      type="time"
                       name="toDate"
                       value={formData.toDate}
                       onChange={handleChange}

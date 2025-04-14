@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 
@@ -33,19 +33,25 @@ export const Footer = () => {
             <h3 className="font-medium mb-4">{t("catalog")}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-sm hover:underline">
+                <Link
+                  to={`/${lang}/#about`}
+                  className="text-sm hover:underline"
+                >
                   {t("about_us")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#news" className="text-sm hover:underline">
+                <Link to={`/${lang}/#news`} className="text-sm hover:underline">
                   {t("news")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#introduction" className="text-sm hover:underline">
+                <Link
+                  to={`/${lang}/#introduction`}
+                  className="text-sm hover:underline"
+                >
                   {t("introduction")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -68,8 +68,8 @@ export const CourseCatalog = () => {
   }
 
   return (
-    <div className="py-8 sm:py-12 md:py-16 px-4" id="courses">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-8 sm:py-12 md:py-16 px-4">
+      <div className="max-w-7xl mx-auto" id="courses">
         <h1 className="text-2xl font-medium mb-6">{t("course_catalog")}</h1>
 
         {/* Category Tabs */}
@@ -103,8 +103,9 @@ export const CourseCatalog = () => {
       {/* Course Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
-          <div
+          <Link
             key={course.id}
+            to={`/${lang}/${course.id}`}
             className="border rounded overflow-hidden shadow-sm"
           >
             <img
@@ -141,7 +142,7 @@ export const CourseCatalog = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

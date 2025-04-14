@@ -92,7 +92,7 @@ export const TimeSelectionModal = ({
               <div className="flex items-center">
                 <span className="mr-2 w-8">От</span>
                 <input
-                  type="text"
+                  type="time"
                   className="bg-transparent border border-white/30 rounded px-3 py-2 w-full text-white placeholder-white/70 outline-none"
                   value={fromTime}
                   onChange={(e) => setFromTime(e.target.value)}
@@ -103,7 +103,7 @@ export const TimeSelectionModal = ({
               <div className="flex items-center">
                 <span className="mr-2 w-8">до</span>
                 <input
-                  type="text"
+                  type="time"
                   className="bg-transparent border border-white/30 rounded px-3 py-2 w-full text-white placeholder-white/70 outline-none"
                   value={toTime}
                   onChange={(e) => setToTime(e.target.value)}

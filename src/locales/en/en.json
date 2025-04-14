@@ -43,5 +43,17 @@
   "subscribe": "Subscribe",
   "reserved": "All rights reserved",
   "cyberSecurity": "Cybersecurity",
-  "secret": "Show Less"
+  "secret": "Show Less",
+  "yanvar": "January",
+  "fevral": "February",
+  "mart": "March",
+  "aprel": "April",
+  "may": "May",
+  "iyun": "June",
+  "iyul": "July",
+  "avgust": "August",
+  "sentabr": "September",
+  "oktabr": "October",
+  "noyabr": "November",
+  "dekabr": "December"
 }

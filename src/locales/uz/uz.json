@@ -43,5 +43,17 @@
   "subscribe": "Obuna bo'ling",
   "reserved": "Barcha huquqlar himoyalangan",
   "cyberSecurity": "Kiberxavfsizlik",
-  "secret": "Kamroq ko'rish"
+  "secret": "Kamroq ko'rish",
+  "yanvar": "Yanvar",
+  "fevral": "Fevral",
+  "mart": "Mart",
+  "aprel": "Aprel",
+  "may": "May",
+  "iyun": "Iyun",
+  "iyul": "Iyul",
+  "avgust": "sentabr",
+  "sentabr": "Avgust",
+  "oktabr": "Oktabr",
+  "noyabr": "Noyabr",
+  "dekabr": "Dekabr"
 }

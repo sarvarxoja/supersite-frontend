@@ -24,6 +24,12 @@ export const AboutUsSection = () => {
             <h2 className="text-2xl font-bold text-red-600">{t("about_us")}</h2>
 
             <p className="text-gray-700">{t("about_more")}</p>
+            <p
+              className="text-gray-700 mt-2"
+              style={{ display: block ? "block" : "none" }}
+            >
+              {t("about_more_end")}
+            </p>
             <button
               onClick={() => setBlock(!block)}
               className="about_more_button w-full flex items-center justify-center max-w-xs py-[10px] px-6 bg-white text-gray-600 font-medium text-lg rounded-full shadow-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
@@ -47,12 +53,6 @@ export const AboutUsSection = () => {
             />
           </div>
         </div>
-        <p
-          className="text-gray-700 mt-2"
-          style={{ display: block ? "block" : "none" }}
-        >
-          {t("about_more_end")}
-        </p>
       </div>
     </div>
   );
