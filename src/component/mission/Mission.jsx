@@ -18,7 +18,7 @@ export const OurMissionSection = () => {
   return (
     <div className="bg-red-800 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row items-center gap-8">
+        <div className="flex flex-col md:flex-row  gap-8">
           <div className="w-full md:w-1/2">
             <img
               src="/Rectangle 9.png"
@@ -34,6 +34,12 @@ export const OurMissionSection = () => {
 
             <p className="text-gray-100">{t("mission_more")}</p>
             <div className="mt-6">
+            <p
+          className=" text-gray-100 mb-4 "
+          style={{ display: block ? "block" : "none" }}
+        >
+          {t("mission_end")}
+        </p>
               <button
                 onClick={() => setBlock(!block)}
                 className="about_more_button w-full flex items-center justify-center max-w-xs py-[10px] px-6 bg-white text-gray-600 font-medium text-lg rounded-full shadow-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
@@ -48,12 +54,6 @@ export const OurMissionSection = () => {
             </div>
           </div>
         </div>
-        <p
-          className=" text-gray-100 mt-4"
-          style={{ display: block ? "block" : "none" }}
-        >
-          {t("mission_end")}
-        </p>
       </div>
     </div>
   );

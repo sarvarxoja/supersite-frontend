@@ -101,48 +101,48 @@ export const CourseCatalog = () => {
       </div>
 
       {/* Course Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
-          <Link
-            key={course.id}
-            to={`/${lang}/${course.id}`}
-            className="border rounded overflow-hidden shadow-sm"
-          >
-            <img
-              src={`https://www.isouzbekistan.uz/api${course.image}`}
-              loading="lazy"
-              className="w-full h-48 object-cover"
-            />
-            <div className="px-4 py-7">
-              <div className="mb-3">
-                <span className="category_button text-white py-2 px-4 rounded text-xs font-medium">
-                  {course.catalog}
-                </span>
+            <Link
+              key={course.id}
+              to={`/${lang}/${course.id}`}
+              className="border rounded overflow-hidden shadow-sm"
+            >
+              <img
+                src={`https://www.isouzbekistan.uz/api${course.image}`}
+                loading="lazy"
+                className="w-full h-48 object-cover"
+              />
+              <div className="px-4 py-7">
+                <div className="mb-3">
+                  <span className="category_button text-white py-2 px-4 rounded text-xs font-medium">
+                    {course.catalog}
+                  </span>
+                </div>
+                <h3 className="font-medium text-sm mb-2">
+                  {lang === "en"
+                    ? course.course_title_eng
+                    : lang === "ru"
+                    ? course.course_title_ru
+                    : course.course_title_uz}
+                </h3>
+                <p className="text-gray-600 text-xs mb-3">
+                  {lang === "en"
+                    ? course.benefits_eng
+                    : lang === "ru"
+                    ? course.benefits_ru
+                    : course.benefits_uz}
+                </p>
+                <div className="flex justify-between items-center">
+                  <Link
+                    className="text-blue-500 text-xs"
+                    to={`/${lang}/${course.id}`}
+                  >
+                    {t("more_details")} →
+                  </Link>
+                </div>
               </div>
-              <h3 className="font-medium text-sm mb-2">
-                {lang === "en"
-                  ? course.course_title_eng
-                  : lang === "ru"
-                  ? course.course_title_ru
-                  : course.course_title_uz}
-              </h3>
-              <p className="text-gray-600 text-xs mb-3">
-                {lang === "en"
-                  ? course.benefits_eng
-                  : lang === "ru"
-                  ? course.benefits_ru
-                  : course.benefits_uz}
-              </p>
-              <div className="flex justify-between items-center">
-                <Link
-                  className="text-blue-500 text-xs"
-                  to={`/${lang}/${course.id}`}
-                >
-                  {t("more_details")} →
-                </Link>
-              </div>
-            </div>
-          </Link>
+            </Link>
         ))}
       </div>
 
