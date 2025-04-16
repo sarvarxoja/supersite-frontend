@@ -38,6 +38,7 @@ export const CourseCard = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
+
   return (
     <div className="max-w-7xl mx-auto  px-4  mt-[30px] mb-[60px] bg-white">
       <div className="w-full">
@@ -51,7 +52,11 @@ export const CourseCard = () => {
 
       <div className="py-6">
         <div className="bg-blue-100 category_button text-xs text-white font-medium rounded px-2 py-1 inline-block mb-6">
-          {courseData.catalog}
+          {lang === "en"
+            ? courseData.catalog
+            : lang === "ru"
+            ? courseData.catalog_rus
+            : courseData.catalog_uzb}
         </div>
 
         <h2 className="text-lg font-[500] text-gray-800 mb-2 text-[30px]">
@@ -121,7 +126,11 @@ export const CourseCard = () => {
       <TimeSelectionModal
         isModalOpen={isOpen}
         openModalAndCloseModal={openModalAndCloseModal}
-        courseType={courseData.catalog}
+        courseType={lang === "en"
+          ? courseData.catalog
+          : lang === "ru"
+          ? courseData.catalog_rus
+          : courseData.catalog_uzb}
       />
     </div>
   );

@@ -25,7 +25,7 @@ export const CourseCatalog = () => {
 
   useEffect(() => {
     getCategories();
-  }, []);
+  }, [getCategories]);
 
   useEffect(() => {
     getCourses();
@@ -34,9 +34,30 @@ export const CourseCatalog = () => {
   async function getCategories() {
     try {
       let { data } = await axios.get("/courses/get/catalog");
+      let selectedCatalog = [];
+
+      if (lang === "ru") {
+        selectedCatalog = data.catalog_rus?.filter(
+          (item) => item && item !== "catalog_rus"
+        );
+
+        // Agar catalog_rus mavjud bo'lmasa yoki bo'sh bo'lsa, catalog dan olish
+        if (!selectedCatalog || selectedCatalog.length === 0) {
+          selectedCatalog =
+            data.catalog?.filter((item) => item && item !== "catalog") || [];
+        }
+      } else if (lang === "en") {
+        selectedCatalog =
+          data.catalog?.filter((item) => item && item !== "catalog") || [];
+      } else {
+        selectedCatalog =
+          data.catalog_uzb?.filter((item) => item && item !== "catalog_uzb") ||
+          [];
+      }
+
       setCategories([
         lang === "ru" ? "Все" : lang === "en" ? "All" : "Barchasi",
-        ...data.catalog,
+        ...selectedCatalog,
       ]);
     } catch (error) {
       console.log(error);
@@ -103,46 +124,46 @@ export const CourseCatalog = () => {
       {/* Course Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
-            <Link
-              key={course.id}
-              to={`/${lang}/${course.id}`}
-              className="border rounded overflow-hidden shadow-sm"
-            >
-              <img
-                src={`https://www.isouzbekistan.uz/api${course.image}`}
-                loading="lazy"
-                className="w-full h-48 object-cover"
-              />
-              <div className="px-4 py-7">
-                <div className="mb-3">
-                  <span className="category_button text-white py-2 px-4 rounded text-xs font-medium">
-                    {course.catalog}
-                  </span>
-                </div>
-                <h3 className="font-medium text-sm mb-2">
-                  {lang === "en"
-                    ? course.course_title_eng
-                    : lang === "ru"
-                    ? course.course_title_ru
-                    : course.course_title_uz}
-                </h3>
-                <p className="text-gray-600 text-xs mb-3">
-                  {lang === "en"
-                    ? course.benefits_eng
-                    : lang === "ru"
-                    ? course.benefits_ru
-                    : course.benefits_uz}
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link
-                    className="text-blue-500 text-xs"
-                    to={`/${lang}/${course.id}`}
-                  >
-                    {t("more_details")} →
-                  </Link>
-                </div>
+          <Link
+            key={course.id}
+            to={`/${lang}/${course.id}`}
+            className="border rounded overflow-hidden shadow-sm"
+          >
+            <img
+              src={`https://www.isouzbekistan.uz/api${course.image}`}
+              loading="lazy"
+              className="w-full h-48 object-cover"
+            />
+            <div className="px-4 py-7">
+              <div className="mb-3">
+                <span className="category_button text-white py-2 px-4 rounded text-xs font-medium">
+                  {course.catalog}
+                </span>
               </div>
-            </Link>
+              <h3 className="font-medium text-sm mb-2">
+                {lang === "en"
+                  ? course.course_title_eng
+                  : lang === "ru"
+                  ? course.course_title_ru
+                  : course.course_title_uz}
+              </h3>
+              <p className="text-gray-600 text-xs mb-3">
+                {lang === "en"
+                  ? course.benefits_eng
+                  : lang === "ru"
+                  ? course.benefits_ru
+                  : course.benefits_uz}
+              </p>
+              <div className="flex justify-between items-center">
+                <Link
+                  className="text-blue-500 text-xs"
+                  to={`/${lang}/${course.id}`}
+                >
+                  {t("more_details")} →
+                </Link>
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
 

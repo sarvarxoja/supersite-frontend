@@ -28,12 +28,32 @@ export const ContactForm = () => {
 
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [lang]);
 
   const fetchCategories = async () => {
     try {
       const { data } = await axios.get("/courses/get/catalog");
-      setCategories(data.catalog || []);
+      let selectedCatalog = [];
+
+      if (lang === "ru") {
+        selectedCatalog = data.catalog_rus?.filter(
+          (item) => item && item !== "catalog_rus"
+        );
+
+        // Agar catalog_rus mavjud bo'lmasa yoki bo'sh bo'lsa, catalog dan olish
+        if (!selectedCatalog || selectedCatalog.length === 0) {
+          selectedCatalog =
+            data.catalog?.filter((item) => item && item !== "catalog") || [];
+        }
+      } else if (lang === "en") {
+        selectedCatalog =
+          data.catalog?.filter((item) => item && item !== "catalog") || [];
+      } else {
+        selectedCatalog =
+          data.catalog_uzb?.filter((item) => item && item !== "catalog_uzb") ||
+          [];
+      }
+      setCategories(selectedCatalog);
     } catch (error) {
       console.log(error);
     }
@@ -98,10 +118,10 @@ export const ContactForm = () => {
       <div className="max-w-7xl mx-auto md:py-16 px-4">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
           <div className="w-full md:w-3/5 lg:w-2/3 text-white">
-            <h2 className="text-3xl font-bold mb-2 text-white">{t("request")}</h2>
-            <p className="mb-8 text-gray-100 text-lg">
-              {t("leave_a_request")}
-            </p>
+            <h2 className="text-3xl font-bold mb-2 text-white">
+              {t("request")}
+            </h2>
+            <p className="mb-8 text-gray-100 text-lg">{t("leave_a_request")}</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -194,8 +214,9 @@ export const ContactForm = () => {
                     value={formData.comments}
                     onChange={handleChange}
                     className="textarea-field"
+                    autoComplete="off"
                     placeholder="Ваш комментарий..."
-                  ></input>
+                  />
                 </div>
               </div>
               <div className="col-span-1 md:col-span-2">
@@ -236,7 +257,11 @@ export const ContactForm = () => {
 
               <div className="mt-6">
                 <button type="submit" className="submit-button">
-                  {load === false ? <span>{t("send_request")}</span> : "Loading..."}
+                  {load === false ? (
+                    <span>{t("send_request")}</span>
+                  ) : (
+                    "Loading..."
+                  )}
                 </button>
               </div>
             </form>
