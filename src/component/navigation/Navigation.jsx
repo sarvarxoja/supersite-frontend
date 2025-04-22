@@ -61,14 +61,6 @@ export const Navbar = () => {
             >
               {t("news")}
             </Link>
-            <Link
-              to={`/${lang}/#introduction`}
-              className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
-            >
-              {t("introduction")} 
-            </Link>
-
-            {/* Language dropdown */}
             <div className="text-black text-sm relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
@@ -87,7 +79,7 @@ export const Navbar = () => {
                           changeLanguage(lng);
                           setIsLangOpen(false);
                         }}
-                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${
+                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left lang_list ${
                           lang === lng ? "bg-gray-100 font-semibold" : ""
                         }`}
                       >
@@ -116,26 +108,27 @@ export const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to={`/${lang || "ru"}`}>
-              <button className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-black bg-pink-100 hover:bg-pink-200 transition-colors">
-                Курсы
-              </button>
+            <Link
+              to={`/${lang}/#courses`}
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+            >
+                {t("courses")}
             </Link>
-            <a
-              href="#"
+            <Link
+              to={`/${lang}/#about`}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
             >
-              О нас
-            </a>
-            <a
-              href="#"
+              {t("about_us")}
+            </Link>
+            <Link
+              to={`/${lang}/#news`}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
             >
-              Демо урок
-            </a>
+              {t("news")}
+            </Link>
             <div className="px-3 py-2 rounded-md text-base font-medium text-gray-700">
               <div className="flex justify-between items-center">
-                <span>Язык</span>
+                <span>{t("language")}</span>
                 <div className="flex gap-2">
                   {["ru", "en", "uz"].map((lng) => (
                     <button

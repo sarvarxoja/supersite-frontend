@@ -16,11 +16,11 @@ export const MainPage = () => {
       <AboutUsSection />
       <OurMissionSection />
       <NewsSection />
-      <VideoDeliverySection />
+      {/* <VideoDeliverySection /> */}
       <Delivering />
-      <PartnersSection />
       <CourseCatalog />
       <ContactForm />
+      <PartnersSection />
       <FAQAccordion />
     </div>
   );

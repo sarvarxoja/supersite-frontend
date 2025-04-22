@@ -8,7 +8,6 @@ import { Link, useParams } from "react-router-dom";
 export const CourseCatalog = () => {
   const [page, setPage] = useState(1);
   const [content, setContent] = useState(null);
-  const [activeTab, setActiveTab] = useState("Все");
   const [paginationData, setPaginationData] = useState([]);
 
   const [categories, setCategories] = useState([]);
@@ -25,11 +24,11 @@ export const CourseCatalog = () => {
 
   useEffect(() => {
     getCategories();
-  }, [getCategories]);
+  }, [lang]);
 
   useEffect(() => {
     getCourses();
-  }, [page, content]);
+  }, [page, content, lang]);
 
   async function getCategories() {
     try {
@@ -149,10 +148,10 @@ export const CourseCatalog = () => {
               </h3>
               <p className="text-gray-600 text-xs mb-3">
                 {lang === "en"
-                  ? course.benefits_eng
+                  ? course.course_objective_eng
                   : lang === "ru"
-                  ? course.benefits_ru
-                  : course.benefits_uz}
+                  ? course.course_objective_ru
+                  : course.course_objective_uz}
               </p>
               <div className="flex justify-between items-center">
                 <Link

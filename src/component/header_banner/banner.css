@@ -25,3 +25,31 @@
   background-color: #d62b31;
   color: white;
 }
+
+@media (max-width: 972px) {
+  .header_responsive_img {
+      max-height: 300px
+  }
+
+  .responsive_cee_button {
+    font-size: 9px;
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header_responsive_img {
+      max-height: 200px
+  }
+}
+
+@media (max-width: 352px) {
+  .header_responsive_img {
+      max-height: 150px
+  }
+
+  .responsive_cee_button {
+    font-size: 5px;
+    max-width: 100px;
+  }
+}

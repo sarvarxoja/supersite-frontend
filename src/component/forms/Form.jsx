@@ -114,7 +114,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="form_container">
+    <div className="form_container" id="form">
       <div className="max-w-7xl mx-auto md:py-16 px-4">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
           <div className="w-full md:w-3/5 lg:w-2/3 text-white">
@@ -276,7 +276,7 @@ export const ContactForm = () => {
               src="/Rectangle 39929 1.png"
               alt="Customer Support"
               loading="lazy"
-              className="relative z-10  operator_image object-contain mx-auto"
+              className="relative z-10 operator_image object-contain mx-auto"
             />
           </div>
         </div>

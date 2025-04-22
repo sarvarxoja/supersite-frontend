@@ -32,6 +32,14 @@ export const Footer = () => {
           <div>
             <h3 className="font-medium mb-4">{t("catalog")}</h3>
             <ul className="space-y-2">
+            <li>
+                <Link
+                  to={`/${lang}/#courses`}
+                  className="text-sm hover:underline"
+                >
+                  {t("courses")}
+                </Link>
+              </li>
               <li>
                 <Link
                   to={`/${lang}/#about`}
@@ -43,14 +51,6 @@ export const Footer = () => {
               <li>
                 <Link to={`/${lang}/#news`} className="text-sm hover:underline">
                   {t("news")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={`/${lang}/#introduction`}
-                  className="text-sm hover:underline"
-                >
-                  {t("introduction")}
                 </Link>
               </li>
             </ul>

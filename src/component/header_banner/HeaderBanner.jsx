@@ -78,7 +78,7 @@ export const HeaderBanner = () => {
             return `<span class="${className} w-2 h-2 bg-white/50 rounded-full hover:bg-white"></span>`;
           },
         }}
-        className="my_carousel"
+        className="my_carousel header_responsive_img"
       >
         {carouselImages.map((image) => (
           <SwiperSlide key={image.id}>
@@ -90,9 +90,9 @@ export const HeaderBanner = () => {
                 className="object-cover w-full h-full"
               />
               <div className="absolute bottom-6 left-6 z-20">
-                <button className="bg-pink-50 text-gray-800 py-[8px] px-6 rounded-full w-[200px] font-medium text-center shadow-sm border border-pink-100 main_enter_button">
+                <a href="#form" className="block responsive_cee_button cursor-pointer bg-pink-50 text-gray-800 py-[8px] px-6 rounded-full w-[200px] font-medium text-center shadow-sm border border-pink-100 main_enter_button">
                   {t("enroll_in_a_course")}
-                </button>
+                </a>
               </div>
             </div>
           </SwiperSlide>

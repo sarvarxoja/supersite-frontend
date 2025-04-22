@@ -22,7 +22,7 @@ export const CourseCard = () => {
 
   useEffect(() => {
     fetchCourse();
-  }, [id]);
+  }, [id, lang]);
 
   async function fetchCourse() {
     try {
@@ -68,10 +68,10 @@ export const CourseCard = () => {
         </h2>
         <p>
           {lang === "en"
-            ? courseData.benefits_eng
+            ? courseData.course_objective_eng
             : lang === "ru"
-            ? courseData.benefits_ru
-            : courseData.benefits_uz}
+            ? courseData.course_objective_ru
+            : courseData.course_objective_uz}
         </p>
 
         <div className="mt-6 mb-6">
@@ -84,10 +84,10 @@ export const CourseCard = () => {
           </h2>
           <p>
             {lang === "en"
-              ? courseData.course_objective_eng
+              ? courseData.benefits_eng
               : lang === "ru"
-              ? courseData.course_objective_ru
-              : courseData.course_objective_uz}
+              ? courseData.benefits_ru
+              : courseData.benefits_uz}
           </p>
         </div>
 

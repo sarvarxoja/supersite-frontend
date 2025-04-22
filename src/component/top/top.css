@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@media (max-width: 700px) {
+  .top_section_control {
+    column-gap: 50px;
+    justify-content: center;
+  }
+}
+
+.lang_list {
+  font-family: "Montserrat", sans-serif;
+}
+
+.top-left-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.5;
+  color: rgb(122, 118, 118);
+}
+
+.top-left-title:hover {
+  color: #a11e29;;
+}

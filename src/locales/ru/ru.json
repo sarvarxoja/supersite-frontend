@@ -43,7 +43,7 @@
   "subscribe": "Подписывайтесь",
   "reserved": "Все права защищены",
   "cyberSecurity": "Кибербезопасность",
-  "secret": "Секрет",
+  "secret": "Скрыть",
   "yanvar": "Январь",
   "fevral": "Февраль",
   "mart": "Март",
@@ -55,5 +55,12 @@
   "sentabr": "Сентябрь",
   "oktabr": "Октябрь",
   "noyabr": "Ноябрь",
-  "dekabr": "Декабрь"
+  "dekabr": "Декабрь",
+  "language": "Язык",
+  "skills": "Навыки",
+  "conference": "Конференция",
+  "magazine": "Журнал",
+  "login": "Авторизоваться",
+  "partner_with_us": "Партнер с нами",
+  "store": "Магазин"
 }

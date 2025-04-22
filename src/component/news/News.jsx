@@ -17,11 +17,12 @@ export const NewsSection = () => {
 
   useEffect(() => {
     fetchNews();
-  }, []);
+  }, [lang]);
 
   async function fetchNews() {
     try {
       let { data } = await axios.get("/news/all?page=1&limit=5");
+      console.log(data)
       setNewsItems(data.news);
     } catch (error) {
       console.log(error);

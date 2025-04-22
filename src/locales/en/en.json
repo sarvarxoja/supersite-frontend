@@ -55,5 +55,12 @@
   "sentabr": "September",
   "oktabr": "October",
   "noyabr": "November",
-  "dekabr": "December"
+  "dekabr": "December",
+  "language": "Language",
+  "skills": "Skills",
+  "conference": "Conference",
+  "magazine": "Magazine",
+  "login": "Login",
+  "partner_with_us": "Partner with us",
+  "store": "Store"
 }

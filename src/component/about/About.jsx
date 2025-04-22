@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { VideoPlayer } from "../my_video/Video";
 
 export const AboutUsSection = () => {
   const { lang } = useParams();
@@ -18,8 +19,10 @@ export const AboutUsSection = () => {
   return (
     <div className="bg-white py-16" id="about">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Left column - Text content */}
+        {/* Main layout - responsive reverse direction */}
+        <div className="flex flex-col-reverse md:flex-row items-center gap-8">
+          
+          {/* Text block */}
           <div className="w-full md:w-1/2 space-y-6">
             <h2 className="text-2xl font-bold text-red-600">{t("about_us")}</h2>
 
@@ -43,14 +46,9 @@ export const AboutUsSection = () => {
             </button>
           </div>
 
-          {/* Right column - Image */}
-          <div className="w-full md:w-1/2">
-            <img
-              src="/Rectangle 6.png"
-              loading="lazy"
-              alt="Team working together"
-              className="w-full h-auto rounded-lg"
-            />
+          {/* Video block */}
+          <div className="">
+            <VideoPlayer />
           </div>
         </div>
       </div>
