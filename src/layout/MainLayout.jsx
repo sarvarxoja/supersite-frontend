@@ -3,7 +3,7 @@ import TopSection from "../component/top/Top";
 import { Footer } from "../component/footer/Footer";
 import { Navbar } from "../component/navigation/Navigation";
 
-export const MainLayout = () => {
+export const MainLayout = () => {  
   return (
     <div>
       <TopSection/>

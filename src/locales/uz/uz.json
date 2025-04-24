@@ -62,5 +62,13 @@
   "magazine": "Jurnal",
   "login": "Tizimga kirish",
   "partner_with_us": "Biz bilan hamkorlik",
-  "store": "Do'kon"
+  "store": "Do'kon",
+  "uz_partner_title": "O‘zbekiston Respublikasi Hukumatining rasmiy portali",
+  "uz_partner_bio": "O‘zbekiston Respublikasi Hukumat portali davlat organlari o‘rtasidagi, shuningdek yuridik va jismoniy shaxslar o‘rtasidagi elektron axborot almashinuvi infratuzilmasining asosiy tarkibiy qismi hisoblanadi.",
+  "pecb_partner_title": "Raqamli ishonchni shakllantirish – ta’lim va sertifikatlash",
+  "pecb_partner_bio": "PECB — bu turli sohalarda kompleks ta’lim, sertifikatlash va o‘quv dasturlari orqali raqamli ishonchni mustahkamlashga sodiq bo‘lgan yetakchi sertifikatlashtirish organidir. Biz mutaxassislarga raqamli xavfsizlik va boshqa yo‘nalishlarda o‘z bilim va ko‘nikmalarini rivojlantirish hamda namoyish etish imkoniyatini beramiz, xalqaro miqyosda tan olingan standartlarga mos, dunyo darajasidagi sertifikatlash dasturlarini taklif qilamiz",
+  "iaf_partner_title": " IAF CertSearch — akkreditatsiyadan o‘tgan sertifikatlarga oid global ma’lumotlar bazasi",
+  "iaf_partner_bio": " IAF CertSearch — bu butun dunyo bo‘ylab akkreditatsiyadan o‘tgan sertifikatlarni tekshirish uchun Xalqaro Akkreditatsiya Forumi (IAF) va uning a’zolari tomonidan yaratilgan global ma’lumotlar bazasidir. Bu tizim orqali foydalanuvchilar ISO/IEC 17021-1 standarti doirasida, IAF a’zosi bo‘lgan akkreditatsiya organlari tomonidan akkreditatsiyadan o‘tgan sertifikatlashtirish organlari bergan sertifikatlarni qidirish va ularning maqomini tekshirishlari mumkin.",
+  "ozak_partner_title": "Ishonchni shakllantirish – o‘qitish va sertifikatlash",
+  "ozak_partner_bio": " Akkred.uz — raqamli muhitda ishonchni mustahkamlashga qaratilgan yetakchi akkreditatsiya markazi bo‘lib, sifatli ta’lim, sertifikatlash va muvofiqlikni baholash dasturlarini taklif etadi. Biz raqamli xavfsizlik va boshqa muhim sohalarda mutaxassislarning bilim va ko‘nikmalarini rivojlantirish hamda tasdiqlashiga ko‘maklashamiz. Buning uchun ISO/IEC xalqaro standartlariga va APAC, ILAC hamda IAF kabi global tashkilotlar talablariga mos keluvchi, jahon darajasidagi dasturlarni taklif qilamiz"
 }

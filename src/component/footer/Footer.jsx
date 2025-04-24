@@ -80,16 +80,11 @@ export const Footer = () => {
 
           {/* Third column */}
           <div>
-            <h3 className="font-medium mb-4">Контакты</h3>
+            <h3 className="font-medium mb-4">{t("contacts")}</h3>
             <ul className="space-y-2">
               <li>
-                <a href="tel:+9989999900" className="text-sm hover:underline">
-                  +998 (99) 999-00-00
-                </a>
-              </li>
-              <li>
-                <a href="tel:+9989999999" className="text-sm hover:underline">
-                  +998 (99) 999-99-99
+                <a href="tel:+998337214262" className="text-sm hover:underline">
+                  +998 (33) 721 42 62
                 </a>
               </li>
             </ul>
@@ -97,12 +92,12 @@ export const Footer = () => {
             {/* Social media and subscription */}
           </div>
           <div>
-            <h3 className="font-medium mb-4">Подписывайтесь</h3>
+            <h3 className="font-medium mb-4">{t("subscribe")}</h3>
             <div className="flex space-x-3">
               <a href="#" className="hover:text-gray-200">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="hover:text-gray-200">
+              <a href="#" className="hover:text-gray-200">    
                 <Instagram size={18} />
               </a>
               <a href="#" className="hover:text-gray-200">

@@ -18,18 +18,18 @@ import { useTranslation } from "react-i18next";
 const carouselImages = [
   {
     id: 1,
-    url: "/Rectangle 39925.png", // Public papkadagi to‘g‘ri yo‘l
+    url: "/hbannter1.jpg", // Public papkadagi to‘g‘ri yo‘l
     alt: "Person studying with a notebook and coffee",
   },
   {
     id: 2,
-    url: "/Rectangle 39926.png",
+    url: "/hbanner2.jpg",
     alt: "Student working on laptop",
   },
   {
     id: 3,
-    url: "/Rectangle 4.png",
-    alt: "Classroom setting with instructor",
+    url: "/Rectangle 39925.png",
+    alt: "Person studying with a notebook and coffee",
   },
 ];
 

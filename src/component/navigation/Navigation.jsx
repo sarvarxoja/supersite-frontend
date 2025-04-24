@@ -43,7 +43,7 @@ export const Navbar = () => {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-6">
-          <Link
+            <Link
               to={`/${lang}/#courses`}
               className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
             >
@@ -61,6 +61,13 @@ export const Navbar = () => {
             >
               {t("news")}
             </Link>
+            <a
+              to={`/${lang}/#news`}
+              href="tel:+998337214262"
+              className="px-4 py-1 rounded-full text-black text-sm hover:bg-pink-200 transition-colors navbar_link"
+            >
+              +998 (33) 721 42 62
+            </a>
             <div className="text-black text-sm relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
@@ -79,9 +86,8 @@ export const Navbar = () => {
                           changeLanguage(lng);
                           setIsLangOpen(false);
                         }}
-                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left lang_list ${
-                          lang === lng ? "bg-gray-100 font-semibold" : ""
-                        }`}
+                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left lang_list ${lang === lng ? "bg-gray-100 font-semibold" : ""
+                          }`}
                       >
                         {lng.toUpperCase()}
                       </button>
@@ -112,7 +118,7 @@ export const Navbar = () => {
               to={`/${lang}/#courses`}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
             >
-                {t("courses")}
+              {t("courses")}
             </Link>
             <Link
               to={`/${lang}/#about`}
@@ -126,6 +132,13 @@ export const Navbar = () => {
             >
               {t("news")}
             </Link>
+            <a
+              to={`/${lang}/#news`}
+              href="tel:+998337214262"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"     
+            >
+              +998 (33) 721 42 62
+            </a>
             <div className="px-3 py-2 rounded-md text-base font-medium text-gray-700">
               <div className="flex justify-between items-center">
                 <span>{t("language")}</span>
@@ -137,9 +150,8 @@ export const Navbar = () => {
                         changeLanguage(lng);
                         setIsMenuOpen(false);
                       }}
-                      className={`px-2 py-1 rounded ${
-                        lang === lng ? "bg-gray-200" : "hover:bg-gray-100"
-                      }`}
+                      className={`px-2 py-1 rounded ${lang === lng ? "bg-gray-200" : "hover:bg-gray-100"
+                        }`}
                     >
                       {lng.toUpperCase()}
                     </button>

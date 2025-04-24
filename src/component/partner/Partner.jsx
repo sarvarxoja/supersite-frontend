@@ -8,32 +8,32 @@ import { useTranslation } from "react-i18next";
 export const PartnersSection = () => {
   const partners = [
     {
-      name: "Microsoft",
-      logo: "/Microsoft Logo.png",
-      title: "Партнёр курса по кибербезопасности",
+      name: "Uzbekistan gerb",
+      logo: "/photo_2025-04-24_22-26-42.jpg",
+      title: "uz_partner_title",
       description:
-        "Доступ к передовым технологиям – использование облачных решений Microsoft Azure для кибербезопасности.",
+        "uz_partner_bio",
     },
     {
-      name: "OLA",
-      logo: "/OLA Logo.png",
-      title: "Партнёр курса по кибербезопасности",
+      name: "PECB LOGO",
+      logo: "/photo_2025-04-24_22-25-27.jpg",
+      title: "pecb_partner_title",
       description:
-        "Доступ к передовым технологиям – использование облачных решений Microsoft Azure для кибербезопасности.",
+        "pecb_partner_bio",
     },
     {
-      name: "OYO",
-      logo: "/OYO Logo.png",
-      title: "Партнёр курса по кибербезопасности",
+      name: "IAF LOGO",
+      logo: "/image_2025-04-23_14-00-23.png",
+      title: "iaf_partner_title",
       description:
-        "Доступ к передовым технологиям – использование облачных решений Microsoft Azure для кибербезопасности.",
+        "IAF CertSearch был создан Международным форумом по аккредитации и его членами для проверки аккредитованных сертификатов со всего мира.IAF CertSearch — это глобальная база данных, в которой пользователи могут искать и проверять статус аккредитованных сертификатов, выданных органом по сертификации, аккредитованным органом по аккредитации, подписавшим IAF, в соответствии с основной областью применения ISO/ IEC 17021 - 1.",
     },
     {
-      name: "OYO",
-      logo: "/Microsoft Logo.png",
-      title: "Партнёр курса по кибербезопасности",
+      name: "OZAK LOGO",
+      logo: "/photo_2021-03-13_13-16-14.jpg",
+      title: "ozak_partner_title",
       description:
-        "Доступ к специализированным инструментам обнаружения и предотвращения кибератак от Microsoft",
+        "ozak_partner_bio",
     },
   ];
 
@@ -69,11 +69,11 @@ export const PartnersSection = () => {
                     src={partner.logo}
                     alt={partner.name}
                     loading="lazy"
-                    className="h-52 object-contain"
+                    className="partners_logo object-contain"
                   />
                 </div>
-                <h3 className="text-sm font-medium mb-2">{partner.title}</h3>
-                <TruncateText text={partner.description} maxLength={50} />
+                <h3 className="text-sm font-medium mb-2">{t(partner.title)}</h3>
+                <TruncateText text={t(partner.description)} maxLength={50} />
               </div>
             ))}
           </div>

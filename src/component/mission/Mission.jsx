@@ -21,10 +21,10 @@ export const OurMissionSection = () => {
         <div className="flex flex-col md:flex-row  gap-8">
           <div className="w-full md:w-1/2">
             <img
-              src="/Rectangle 9.png"
+              src="/photo_2025-04-22_21-07-53.jpg"
               alt="Person holding a book"
               loading="lazy"
-              className="w-full h-auto rounded-lg shadow-lg"
+              className="w-full rounded-lg shadow-lg h-[300px] object-cover"
             />
           </div>
 
